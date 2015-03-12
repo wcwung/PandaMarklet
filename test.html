@@ -5,8 +5,19 @@
   <body>
     <a href="javascript:(function(){
       var array = [];
+      var obj = {};
+
+      var sendData = function(){
+        var http = new XMLHttpRequest();
+        var url = 'https://httpbin.org/post';
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/json');
+        http.send( JSON.stringify(obj) );
+        alert('Job saved');
+      };
 
       if( window.location.origin === 'https://www.linkedin.com'){
+        var descriptions = ['URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
         array.push( window.location.pathname );
         array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
         array.push( $('h1')[0].innerHTML );
@@ -19,8 +30,14 @@
           array.push(otherDetails[i].innerHTML)
         }
 
-        console.log(array);
+        for( var i = 0; i < descriptions.length; i++ ){
+          obj[descriptions[i]] = array[i];
+        }
+
+        console.log(obj);
+        sendData();
       }
+
     })();">JobPanda</a>
   </body>
 </html>
@@ -35,5 +52,40 @@ $('div.content:eq(0)')
 $('.details') 
 $('div.label') - labels.
 $('.value') - values.
+
+Days-just number $('div.content:eq(0)').find('.posted').text().split(' ')[1]
+parseInt( $('div.content:eq(0)').find('.posted').text().split(' ')[1], 10 )
+
+javascript:(function() {
+    var sc = document.createElement("SCRIPT");
+    sc.type = "text/javascript";
+    sc.src = "http://domain.com/path/to/script.js";
+    document.body.appendChild(sc);
+})();
+
+javascript:(function() { 
+  var elem=document.createElement('script'); 
+  elem.setAttribute('src', 'http://rootcamp.io/examples/bookmarklets/sayHello.js?t='+(new Date().getTime())); 
+  document.body.appendChild(elem); 
+}())
+
+function sendSMS( recipient ) {
+  var body = getSelText();
+ 
+  if ( body == '' ) {
+    alert("You have not highlighted anything to send to your phone!");
+  } else {
+    // Create object.
+    var http = new XMLHttpRequest();
+ 
+    // POST
+    var data = "recipient=" + recipient + "&body=" + body;
+    var url = "http://www.andy-jiang.com/textme/send_sms/";
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(data);
+    alert("A text was just sent to " + recipient);
+  }
+}
 
  -->
