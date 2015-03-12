@@ -6,19 +6,21 @@
     <a href="javascript:(function(){
       var array = [];
 
-      array.push( window.location.pathname );
-      array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
-      array.push( $('h1')[0].innerHTML );
-      array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
-      array.push( $('div.content:eq(0)').find('.posted').text() );
-      array.push( $('#offsite-apply-button').attr('href') );
+      if( window.location.origin === 'https://www.linkedin.com'){
+        array.push( window.location.pathname );
+        array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+        array.push( $('h1')[0].innerHTML );
+        array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+        array.push( $('div.content:eq(0)').find('.posted').text() );
+        array.push( $('#offsite-apply-button').attr('href') );
 
-      var otherDetails = $('.value');
-      for( var i = 0; i < otherDetails.length; i++ ){
-        array.push(otherDetails[i].innerHTML)
+        var otherDetails = $('.value');
+        for( var i = 0; i < otherDetails.length; i++ ){
+          array.push(otherDetails[i].innerHTML)
+        }
+
+        console.log(array);
       }
-
-      console.log(array);
     })();">JobPanda</a>
   </body>
 </html>
