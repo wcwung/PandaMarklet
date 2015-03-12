@@ -2,6 +2,7 @@
   var array = [];
   var obj = {};
   var site = window.location.origin;
+  var pathname = window.location.pathname;
 
   var sendData = function(){
     var http = new XMLHttpRequest();
@@ -12,10 +13,10 @@
     alert('Job saved');
   };
 
-  if( site + window.location.pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
+  if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
     var descriptions = ['Origin URL','Job URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
-    array.push( window.location.origin );
-    array.push( window.location.pathname );
+    array.push( site );
+    array.push( pathname );
     array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
     array.push( $('h1')[0].innerHTML );
     array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
@@ -33,12 +34,12 @@
 
     console.log(obj);
     sendData();
-  } else if ( site + window.location.pathname.split('/')[2] === 'https://angel.cojobs' ){
+  } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
     var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Skills', 'Salary'];
     var CompanyTitle = $('.join-title').text().split(' at ');
 
-    array.push( window.location.origin );
-    array.push( window.location.pathname );
+    array.push( site );
+    array.push( pathname );
     array.push( CompanyTitle[1] );
     array.push( CompanyTitle[0] );
     array.push( $('.locations').text() );
