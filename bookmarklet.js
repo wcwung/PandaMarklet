@@ -12,7 +12,7 @@
     alert('Job saved');
   };
 
-  if( site === 'https://www.linkedin.com' && window.location.pathname.slice(0,6) !== '/jobs2'){
+  if( site === 'https://www.linkedin.com' && window.location.pathname.slice(0,6) === '/jobs2'){
     var descriptions = ['Origin URL','Job URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
     array.push( window.location.origin );
     array.push( window.location.pathname );
@@ -52,7 +52,7 @@
     console.log(obj);
     sendData(); 
   } else {
-    alert('Not a Valid LinkedIn Job Post');
+    alert('Not a Valid Job Post');
   }
 
 }());
