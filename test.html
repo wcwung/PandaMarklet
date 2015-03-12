@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <a href="javascript:(function(){
+      var array = [];
+
+      array.push( window.location.href );
+      array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+      array.push( $('h1')[0].innerHTML );
+      array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+      array.push( $('div.content:eq(0)').find('.posted').text() );
+      array.push( $('#offsite-apply-button').attr('href') );
+
+      var otherDetails = $('.value');
+      for( var i = 0; i < otherDetails.length; i++ ){
+        array.push(otherDetails[i].innerHTML)
+      }
+
+      console.log(array);
+    })();">JobPanda</a>
+  </body>
+</html>
+
+<!--
+      array.pauh( $('div.content:eq(0)').find('span:eq(0)').text() );
+      array.push( $('h1')[0].innerHTML );
+      array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+      array.push( $('div.content:eq(0)').find('.posted').text() );
+      array.push( $('#offsite-apply-button').attr('href') );
+
+$('.details') 
+$('div.content:eq(0)')
+
+URL 
+Company $('div.content:eq(0)').find('span:eq(0)').text()
+Job Title $("h1[itemprop='title']").text() || $('h1')[0].innerHTML
+Location $('span[itemprop="description"]').text()
+Day Posted $('div.content:eq(0)').find('.posted').text() **PROBLEM DAYS
+Apply Link $('#offsite-apply-button').attr('href') 
+
+- - - - - - -  - -  - - - - - - - -  - -  - - - - - - - -  - -  -
+var array = [];
+var otherDetails = $('div.label')
+for( var i = 0; i < otherDetails.length; i++ ){
+  array.push(otherDetails[i].innerHTML)
+}
+$('div.label') - labels.
+$('.value') - values.
+
+Experience
+Job Function
+Employment Type 
+Industry
+Employer job ID
+Job ID
+ -->
