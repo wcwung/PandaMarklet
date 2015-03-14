@@ -38,10 +38,5 @@
     
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
-
-    /* to add MORE scripts */
-//    var myScriptNode=document.createElement('script');
-//    myScriptNode.setAttribute('src','http://some.js/file.more.js');
-//    document.head.appendChild(myScriptNode);
   
 }());
