@@ -55,7 +55,6 @@
 
     var myCSS, myStyleNode,
         myHTML, myHTMLNode;
-    var sayHello;
 
     /* add the css */
     myCSS  = '#my_unique_id, #my_unique_id *{font-family:Courier,"Courier New",sans-serif;color:#333;line-height:1.5em;font-size:15px;margin:0;padding:0;text-shadow:none;}';
@@ -77,6 +76,7 @@
     myHTML += 'Job Function/Skills: <input class="jobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
     myHTML += 'Employment Type: <input class="employment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
     myHTML += 'Industry: <input class="industry" type="text" value="' + (dataObj["Industry"] || "") + '">';
+    myHTML += '<button>Submit</button>'
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
@@ -84,9 +84,7 @@
     myHTMLNode.innerHTML = myHTML;
 
     /* add js functionality to it */
-    sayHello = function() {
-      var who = window.prompt('who?'); alert('hello '+who);
-    };
+
     
     // if (myHTMLNode.addEventListener) {
     //   myHTMLNode.addEventListener('click', sayHello, false);
