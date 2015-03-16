@@ -82,18 +82,17 @@
     myHTMLNode.innerHTML = myHTML;
 
     /* add js functionality to it */
-    var con = function(){
+    var updataObj = function(){
         console.log("hello");
     };
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
 
     var pandabutton = document.getElementById('pandabutton');
-    console.log(pandabutton);
     if (pandabutton.addEventListener) {
-      pandabutton.addEventListener('click', con, false);
+      pandabutton.addEventListener('click', updataObj, false);
     } else if (el.attachEvent) {
-      pandabutton.attachEvent('onclick', con);
+      pandabutton.attachEvent('onclick', updataObj);
     }
     
   
