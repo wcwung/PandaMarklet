@@ -27,7 +27,7 @@
       data.push( $('h1')[0].innerHTML );
       data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
       data.push( $('#offsite-apply-button').attr('href') );
-      data.push( "LinkedIn");
+      data.push( "LinkedIn" );
 
       seperatedata.push( $('div.content:eq(0)').find('span:eq(0)').text() );
       seperatedata.push( $('div.content:eq(0)').find('.posted').text() );
@@ -38,6 +38,7 @@
 
       fillDataObj(dataObj, descriptions, data);
       fillDataObj(dataObj['Company'], seperate, seperatedata);
+      console.log(dataObj);
     } 
     // else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
     //   var descriptions = ['Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
