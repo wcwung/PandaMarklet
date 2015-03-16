@@ -19,6 +19,11 @@
     myHTML  = '<div class="c">';
     myHTML += 'Company: <input type="text"/>';
     myHTML += 'Job Title: <input type="text"/>';
+    myHTML += 'Location: <input type="text"/>';
+    myHTML += 'Experience: <input type="text"/>';
+    myHTML += 'Job Function/Skills: <input type="text"/>';
+    myHTML += 'Employment Type: <input type="text"/>';
+    myHTML += 'Industry: <input type="text"/>';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
@@ -30,11 +35,11 @@
       var who = window.prompt('who?'); alert('hello '+who);
     };
     
-    if (myHTMLNode.addEventListener) {
-      myHTMLNode.addEventListener('click', sayHello, false);
-    } else if (el.attachEvent) {
-      myHTMLNode.attachEvent('onclick', sayHello);
-    }
+    // if (myHTMLNode.addEventListener) {
+    //   myHTMLNode.addEventListener('click', sayHello, false);
+    // } else if (el.attachEvent) {
+    //   myHTMLNode.attachEvent('onclick', sayHello);
+    // }
     
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
