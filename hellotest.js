@@ -82,7 +82,7 @@
     var updataObj = function(){
       dataObj['Origin URL'] = site;
       dataObj['Job URL'] = pathname;
-      dataObj['Company'] = document.getElementById('pcompany').val();
+      dataObj['Company'] = document.getElementById('pcompany').value;
       console.log(dataObj);
     };
     /* injec the node, with the event attached */
