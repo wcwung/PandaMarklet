@@ -48,9 +48,9 @@
       jobdata.push( site + pathname );
       jobdata.push( "AngelList" );
 
-      jobdata.push( CompanyTitle[1] );
-      jobdata.push( $('.skills').text() );
-      jobdata.push( $('.salary').text() );
+      companydata.push( CompanyTitle[1] );
+      companydata.push( $('.skills').text() );
+      companydata.push( $('.salary').text() );
 
       fillJobObj(jobObject, descriptions, jobdata);
       fillJobObj(jobObject['Company'], company, companydata);
