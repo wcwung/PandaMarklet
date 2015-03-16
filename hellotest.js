@@ -20,9 +20,8 @@
     };
 
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
-      var descriptions = ['Origin URL','Job URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
-      data.push( site );
-      data.push( pathname );
+      var descriptions = ['Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
+      
       data.push( $('div.content:eq(0)').find('span:eq(0)').text() );
       data.push( $('h1')[0].innerHTML );
       data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
@@ -36,11 +35,9 @@
 
       fillDataObj();
     } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
-      var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
+      var descriptions = ['Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
       var CompanyTitle = $('.join-title').text().split(' at ');
 
-      data.push( site );
-      data.push( pathname );
       data.push( CompanyTitle[1] );
       data.push( CompanyTitle[0] );
       data.push( $('.locations').text() );
