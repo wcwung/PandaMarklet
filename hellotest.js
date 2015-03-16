@@ -83,6 +83,13 @@
       dataObj['Origin URL'] = site;
       dataObj['Job URL'] = pathname;
       dataObj['Company'] = document.getElementById('pcompany').value;
+      dataObj['Job Title'] = document.getElementById('pjobtitle').value;
+      dataObj['Location'] = document.getElementById('plocation').value;
+      dataObj['Experience'] = document.getElementById('pexperience').value;
+      dataObj['Job Function'] = document.getElementById('pjobfunction').value;
+      dataObj['Employment Type'] = document.getElementById('pemployment').value;
+      dataObj['Industry'] = document.getElementById('pindustry').value;
+
       console.log(dataObj);
     };
     /* injec the node, with the event attached */
