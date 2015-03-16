@@ -1,7 +1,7 @@
 (function () {
     var data = [];
     var seperatedata =[];
-    var dataObj = {};
+    var dataObj = {'Company': {}};
     var site = window.location.origin;
     var pathname = window.location.pathname;
 
@@ -21,9 +21,8 @@
     };
 
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
-      var descriptions = ['Company', 'Job Title', 'Location', 'Apply Link', 'Source Network'];
+      var descriptions = ['Job Title', 'Location', 'Apply Link', 'Source Network'];
       var seperate = ['Name', 'Day Posted', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
-      data.push( {} );
       data.push( $('h1')[0].innerHTML );
       data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
       data.push( $('#offsite-apply-button').attr('href') );
