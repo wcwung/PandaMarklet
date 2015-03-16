@@ -85,15 +85,16 @@
     var con = function(){
         console.log("hello");
     };
+    /* injec the node, with the event attached */
+    document.body.appendChild(myHTMLNode);
 
     var pandabutton = document.getElementById('pandabutton');
+    console.log(pandabutton);
     if (pandabutton.addEventListener) {
       pandabutton.addEventListener('click', con, false);
     } else if (el.attachEvent) {
       pandabutton.attachEvent('onclick', con);
     }
     
-    /* injec the node, with the event attached */
-    document.body.appendChild(myHTMLNode);
   
 }());
