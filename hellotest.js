@@ -71,7 +71,7 @@
     myHTML += 'Job Function/Skills: <input id="pjobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
     myHTML += 'Employment Type: <input id="pemployment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
     myHTML += 'Industry: <input id="pindustry" type="text" value="' + (dataObj["Industry"] || "") + '">';
-    myHTML += '<button id="pandabutton">Submit</button>';
+    myHTML += '<input id="pandabutton" value="Submit">';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
