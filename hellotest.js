@@ -36,7 +36,7 @@
 
       fillDataObj();
     } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
-      var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Skills', 'Salary'];
+      var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
       var CompanyTitle = $('.join-title').text().split(' at ');
 
       data.push( site );
@@ -70,13 +70,13 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input class="company" type="text" value=' + dataObj["Company"] + '/>';
-    myHTML += 'Job Title: <input class="jobtitle" type="text"/>';
-    myHTML += 'Location: <input class="location" type="text"/>';
-    myHTML += 'Experience: <input class="experience" type="text"/>';
-    myHTML += 'Job Function/Skills: <input class="jobfunction" type="text"/>';
-    myHTML += 'Employment Type: <input class="employment" type="text"/>';
-    myHTML += 'Industry: <input class="industry" type="text"/>';
+    myHTML += 'Company: <input class="company" type="text" value=' + dataObj["Company"] + '>';
+    myHTML += 'Job Title: <input class="jobtitle" type="text" value=' + dataObj["Job Title"] + '>';
+    myHTML += 'Location: <input class="location" type="text" value=' + dataObj["Location"] + '>';
+    myHTML += 'Experience: <input class="experience" type="text" value=' + dataObj["Experience"] + '>';
+    myHTML += 'Job Function/Skills: <input class="jobfunction" type="text" value=' + dataObj["Job Function"] + '>';
+    myHTML += 'Employment Type: <input class="employment" type="text" value=' + dataObj["Employment Type"] + '>';
+    myHTML += 'Industry: <input class="industry" type="text" value=' + dataObj["Industry"] + '>';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
