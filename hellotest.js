@@ -8,8 +8,8 @@
       for( var i = 0; i < descriptions.length; i++ ){
         dataObj[descriptions[i]] = data[i];
       }
-      console.log(dataObj);
     };
+
     var sendData = function(){
       var http = new XMLHttpRequest();
       var url = 'https://httpbin.org/post';
@@ -91,6 +91,7 @@
       dataObj['Industry'] = document.getElementById('pindustry').value;
 
       console.log(dataObj);
+      sendData();
     };
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
