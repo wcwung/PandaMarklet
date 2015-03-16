@@ -7,7 +7,7 @@
     /* add the css */
     myCSS  = '#my_unique_id, #my_unique_id *{font-family:Courier,"Courier New",sans-serif;color:#333;line-height:1.5em;font-size:15px;margin:0;padding:0;text-shadow:none;}';
     myCSS += '#my_unique_id {z-index:10000;position:fixed;bottom:0;left:300;background-color:#fff;}';
-    myCSS += '#my_unique_id .c {heigth: 300px; width:600px; padding:20px; background-color: red}';
+    myCSS += '#my_unique_id .c {heigth: 300px; padding:20px; background-color: red}';
     myCSS += '#my_unique_id h1 {font-size:20px; margin-bottom:0.5em;color:#0080C0}';
     myCSS += '#my_unique_id p {margin-bottom:0.5em;}';
     /* then insert it */
