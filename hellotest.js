@@ -17,8 +17,8 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input type='text'/>';
-    myHTML += 'Job Title: <input type='text'/>';
+    myHTML += 'Company: <input type="text"/>';
+    myHTML += 'Job Title: <input type="text"/>';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
