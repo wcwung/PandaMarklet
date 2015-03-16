@@ -70,7 +70,7 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input class="company" type="text" value=dataObj["Company"]/>';
+    myHTML += 'Company: <input class="company" type="text" value=' + dataObj["Company"] + '/>';
     myHTML += 'Job Title: <input class="jobtitle" type="text"/>';
     myHTML += 'Location: <input class="location" type="text"/>';
     myHTML += 'Experience: <input class="experience" type="text"/>';
