@@ -48,11 +48,9 @@
       data.push( $('.salary').text() );
 
       fillDataObj();
-    } else {
-      alert('Not a Valid Job Post');
     }
 
-
+    /* FORM DATA */
     var myCSS, myStyleNode,
         myHTML, myHTMLNode;
 
@@ -84,8 +82,10 @@
     myHTMLNode.innerHTML = myHTML;
 
     /* add js functionality to it */
-
-    
+    var con = function(){
+        console.log("hello");
+    };
+    con();
     // if (myHTMLNode.addEventListener) {
     //   myHTMLNode.addEventListener('click', sayHello, false);
     // } else if (el.attachEvent) {
