@@ -1,12 +1,13 @@
 (function () {
     var data = [];
+    var seperatedata =[];
     var dataObj = {};
     var site = window.location.origin;
     var pathname = window.location.pathname;
 
-    var fillDataObj = function(){
-      for( var i = 0; i < descriptions.length; i++ ){
-        dataObj[descriptions[i]] = data[i];
+    var fillDataObj = function(obj, keys, values){
+      for( var i = 0; i < keys.length; i++ ){
+        obj[keys[i]] = values[i];
       }
     };
 
@@ -20,32 +21,35 @@
     };
 
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
-      var descriptions = ['Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
-      
-      data.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+      var descriptions = ['Company', 'Job Title', 'Location'];
+      var seperate = ['Name', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
+      data.push( {} );
       data.push( $('h1')[0].innerHTML );
       data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
-      data.push( $('div.content:eq(0)').find('.posted').text() );
-      data.push( $('#offsite-apply-button').attr('href') );
 
+      seperatedata.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+      seperatedata.push( $('div.content:eq(0)').find('.posted').text() );
+      seperatedata.push( $('#offsite-apply-button').attr('href') );
       var otherDetails = $('.value');
       for( var i = 0; i < otherDetails.length; i++ ){
-        data.push(otherDetails[i].innerHTML)
+        seperatedata.push(otherDetails[i].innerHTML)
       }
 
-      fillDataObj();
-    } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
-      var descriptions = ['Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
-      var CompanyTitle = $('.join-title').text().split(' at ');
+      fillDataObj(dataObj, descriptions, data);
+      fillDataObj(dataObj['Company'], seperate, seperatedata);
+    } 
+    // else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
+    //   var descriptions = ['Company', 'Job Title', 'Location', 'Job Function', 'Salary'];
+    //   var CompanyTitle = $('.join-title').text().split(' at ');
 
-      data.push( CompanyTitle[1] );
-      data.push( CompanyTitle[0] );
-      data.push( $('.locations').text() );
-      data.push( $('.skills').text() );
-      data.push( $('.salary').text() );
+    //   data.push( CompanyTitle[1] );
+    //   data.push( CompanyTitle[0] );
+    //   data.push( $('.locations').text() );
+    //   data.push( $('.skills').text() );
+    //   data.push( $('.salary').text() );
 
-      fillDataObj();
-    }
+    //   fillDataObj();
+    // }
 
     /* FORM DATA */
     var myCSS, myStyleNode,
@@ -64,13 +68,13 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input id="pcompany" type="text" value="' + (dataObj["Company"] || "") + '">';
+    myHTML += 'Company: <input id="pcompany" type="text" value="' + (dataObj["Company"]["Name"] || "") + '">';
     myHTML += 'Job Title: <input id="pjobtitle" type="text" value="' + (dataObj["Job Title"] || "") + '">';
     myHTML += 'Location: <input id="plocation" type="text" value="' + (dataObj["Location"] || "") + '">';
-    myHTML += 'Experience: <input id="pexperience" type="text" value="' + (dataObj["Experience"] || "") + '">';
-    myHTML += 'Job Function/Skills: <input id="pjobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
-    myHTML += 'Employment Type: <input id="pemployment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
-    myHTML += 'Industry: <input id="pindustry" type="text" value="' + (dataObj["Industry"] || "") + '">';
+    myHTML += 'Experience: <input id="pexperience" type="text" value="' + (dataObj["Company"]["Experience"] || "") + '">';
+    myHTML += 'Job Function/Skills: <input id="pjobfunction" type="text" value="' + (dataObj["Company"]["Job Function"] || "") + '">';
+    myHTML += 'Employment Type: <input id="pemployment" type="text" value="' + (dataObj["Company"]["Employment Type"] || "") + '">';
+    myHTML += 'Industry: <input id="pindustry" type="text" value="' + (dataObj["Company"]["Industry"] || "") + '">';
     myHTML += '<button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
@@ -82,13 +86,13 @@
     var updataObj = function(){
       dataObj['Origin URL'] = site;
       dataObj['Job URL'] = pathname;
-      dataObj['Company'] = document.getElementById('pcompany').value;
       dataObj['Job Title'] = document.getElementById('pjobtitle').value;
       dataObj['Location'] = document.getElementById('plocation').value;
-      dataObj['Experience'] = document.getElementById('pexperience').value;
-      dataObj['Job Function'] = document.getElementById('pjobfunction').value;
-      dataObj['Employment Type'] = document.getElementById('pemployment').value;
-      dataObj['Industry'] = document.getElementById('pindustry').value;
+      dataObj['Company']['Name'] = document.getElementById('pcompany').value;
+      dataObj["Company"]['Experience'] = document.getElementById('pexperience').value;
+      dataObj["Company"]['Job Function'] = document.getElementById('pjobfunction').value;
+      dataObj["Company"]['Employment Type'] = document.getElementById('pemployment').value;
+      dataObj["Company"]['Industry'] = document.getElementById('pindustry').value;
 
       console.log(dataObj);
       sendData();
