@@ -83,7 +83,10 @@
 
     /* add js functionality to it */
     var updataObj = function(){
-        console.log("hello");
+      console.log("hello");
+      dataObj['Origin URL'] = site;
+      dataObj['Job URL'] = pathname;
+      console.log(dataObj);
     };
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
