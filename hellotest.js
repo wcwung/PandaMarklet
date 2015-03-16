@@ -1,4 +1,57 @@
 (function () {
+    var data = [];
+    var dataObj = {};
+    var site = window.location.origin;
+    var pathname = window.location.pathname;
+
+    var fillDataObj = function(){
+      for( var i = 0; i < descriptions.length; i++ ){
+        dataObj[descriptions[i]] = data[i];
+      }
+      console.log(dataObj);
+    };
+    var sendData = function(){
+      var http = new XMLHttpRequest();
+      var url = 'https://httpbin.org/post';
+      http.open('POST', url, true);
+      http.setRequestHeader('Content-type', 'application/json');
+      http.send( JSON.stringify(dataObj) );
+      alert('Job saved');
+    };
+
+    if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
+      var descriptions = ['Origin URL','Job URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
+      data.push( site );
+      data.push( pathname );
+      data.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+      data.push( $('h1')[0].innerHTML );
+      data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+      data.push( $('div.content:eq(0)').find('.posted').text() );
+      data.push( $('#offsite-apply-button').attr('href') );
+
+      var otherDetails = $('.value');
+      for( var i = 0; i < otherDetails.length; i++ ){
+        data.push(otherDetails[i].innerHTML)
+      }
+
+      fillDataObj();
+    } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
+      var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Skills', 'Salary'];
+      var CompanyTitle = $('.join-title').text().split(' at ');
+
+      data.push( site );
+      data.push( pathname );
+      data.push( CompanyTitle[1] );
+      data.push( CompanyTitle[0] );
+      data.push( $('.locations').text() );
+      data.push( $('.skills').text() );
+      data.push( $('.salary').text() );
+
+      fillDataObj();
+    } else {
+      alert('Not a Valid Job Post');
+    }
+
 
     var myCSS, myStyleNode,
         myHTML, myHTMLNode;
@@ -17,13 +70,13 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input type="text"/>';
-    myHTML += 'Job Title: <input type="text"/>';
-    myHTML += 'Location: <input type="text"/>';
-    myHTML += 'Experience: <input type="text"/>';
-    myHTML += 'Job Function/Skills: <input type="text"/>';
-    myHTML += 'Employment Type: <input type="text"/>';
-    myHTML += 'Industry: <input type="text"/>';
+    myHTML += 'Company: <input class="company" type="text" value=dataObj["Company"]/>';
+    myHTML += 'Job Title: <input class="jobtitle" type="text"/>';
+    myHTML += 'Location: <input class="location" type="text"/>';
+    myHTML += 'Experience: <input class="experience" type="text"/>';
+    myHTML += 'Job Function/Skills: <input class="jobfunction" type="text"/>';
+    myHTML += 'Employment Type: <input class="employment" type="text"/>';
+    myHTML += 'Industry: <input class="industry" type="text"/>';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
