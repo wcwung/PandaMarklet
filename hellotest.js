@@ -21,15 +21,16 @@
     };
 
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
-      var descriptions = ['Company', 'Job Title', 'Location'];
-      var seperate = ['Name', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
+      var descriptions = ['Company', 'Job Title', 'Location', 'Apply Link', 'Source Network'];
+      var seperate = ['Name', 'Day Posted', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
       data.push( {} );
       data.push( $('h1')[0].innerHTML );
       data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+      data.push( $('#offsite-apply-button').attr('href') );
+      data.push( "LinkedIn");
 
       seperatedata.push( $('div.content:eq(0)').find('span:eq(0)').text() );
       seperatedata.push( $('div.content:eq(0)').find('.posted').text() );
-      seperatedata.push( $('#offsite-apply-button').attr('href') );
       var otherDetails = $('.value');
       for( var i = 0; i < otherDetails.length; i++ ){
         seperatedata.push(otherDetails[i].innerHTML)
@@ -68,6 +69,7 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
+    myHTML += 'Source Network: <input id="psource" type="text" value="' + (dataObj["Source Network"] || "") + '">';
     myHTML += 'Company: <input id="pcompany" type="text" value="' + (dataObj["Company"]["Name"] || "") + '">';
     myHTML += 'Job Title: <input id="pjobtitle" type="text" value="' + (dataObj["Job Title"] || "") + '">';
     myHTML += 'Location: <input id="plocation" type="text" value="' + (dataObj["Location"] || "") + '">';
@@ -86,6 +88,7 @@
     var updataObj = function(){
       dataObj['Origin URL'] = site;
       dataObj['Job URL'] = pathname;
+      dataObj['Source Network'] = document.getElementById('psource').value;    
       dataObj['Job Title'] = document.getElementById('pjobtitle').value;
       dataObj['Location'] = document.getElementById('plocation').value;
       dataObj['Company']['Name'] = document.getElementById('pcompany').value;
