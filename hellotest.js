@@ -74,7 +74,7 @@
     myHTML += 'Job Function/Skills: <input class="jobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
     myHTML += 'Employment Type: <input class="employment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
     myHTML += 'Industry: <input class="industry" type="text" value="' + (dataObj["Industry"] || "") + '">';
-    myHTML += '<button onClick="con()">Submit</button>';
+    myHTML += '<button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
@@ -85,6 +85,9 @@
     var con = function(){
         console.log("hello");
     };
+
+    var pandabutton = document.getElementById('pandabutton');
+    pandabutton.addEventListener('click', con, false);
     // if (myHTMLNode.addEventListener) {
     //   myHTMLNode.addEventListener('click', sayHello, false);
     // } else if (el.attachEvent) {
