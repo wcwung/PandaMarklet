@@ -87,12 +87,11 @@
     };
 
     var pandabutton = document.getElementById('pandabutton');
-    pandabutton.addEventListener('click', con, false);
-    // if (myHTMLNode.addEventListener) {
-    //   myHTMLNode.addEventListener('click', sayHello, false);
-    // } else if (el.attachEvent) {
-    //   myHTMLNode.attachEvent('onclick', sayHello);
-    // }
+    if (pandabutton.addEventListener) {
+      pandabutton.addEventListener('click', con, false);
+    } else if (el.attachEvent) {
+      pandabutton.attachEvent('onclick', con);
+    }
     
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
