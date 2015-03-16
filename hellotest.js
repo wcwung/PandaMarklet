@@ -64,13 +64,13 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Company: <input class="pcompany" type="text" value="' + (dataObj["Company"] || "") + '">';
-    myHTML += 'Job Title: <input class="pjobtitle" type="text" value="' + (dataObj["Job Title"] || "") + '">';
-    myHTML += 'Location: <input class="plocation" type="text" value="' + (dataObj["Location"] || "") + '">';
-    myHTML += 'Experience: <input class="pexperience" type="text" value="' + (dataObj["Experience"] || "") + '">';
-    myHTML += 'Job Function/Skills: <input class="pjobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
-    myHTML += 'Employment Type: <input class="pemployment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
-    myHTML += 'Industry: <input class="pindustry" type="text" value="' + (dataObj["Industry"] || "") + '">';
+    myHTML += 'Company: <input id="pcompany" type="text" value="' + (dataObj["Company"] || "") + '">';
+    myHTML += 'Job Title: <input id="pjobtitle" type="text" value="' + (dataObj["Job Title"] || "") + '">';
+    myHTML += 'Location: <input id="plocation" type="text" value="' + (dataObj["Location"] || "") + '">';
+    myHTML += 'Experience: <input id="pexperience" type="text" value="' + (dataObj["Experience"] || "") + '">';
+    myHTML += 'Job Function/Skills: <input id="pjobfunction" type="text" value="' + (dataObj["Job Function"] || "") + '">';
+    myHTML += 'Employment Type: <input id="pemployment" type="text" value="' + (dataObj["Employment Type"] || "") + '">';
+    myHTML += 'Industry: <input id="pindustry" type="text" value="' + (dataObj["Industry"] || "") + '">';
     myHTML += '<button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
@@ -82,7 +82,7 @@
     var updataObj = function(){
       dataObj['Origin URL'] = site;
       dataObj['Job URL'] = pathname;
-      dataObj['Company'] = document.getElementByClassName('pcompany').val();
+      dataObj['Company'] = document.getElementById('pcompany').val();
       console.log(dataObj);
     };
     /* injec the node, with the event attached */
