@@ -68,7 +68,7 @@
     myCSS += '#my_unique_id .c {height: 900px;width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
     myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
     myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px; padding: 5px}';
-    myCSS += '#my_unique_id .squaredThree {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right}';
+    myCSS += '#my_unique_id .squaredThree {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right;margin-top:3px}';
     myCSS += '#my_unique_id .squaredThree label {cursor: pointer;position: absolute;width: 20px;height: 20px;top: 0;border-radius: 4px;-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);background: -moz-linear-gradient(top, #222 0%, #45484d 100%);background: -o-linear-gradient(top, #222 0%, #45484d 100%);background: -ms-linear-gradient(top, #222 0%, #45484d 100%);background: linear-gradient(top, #222 0%, #45484d 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#222", endColorstr="#45484d",GradientType=0 );}';
     myCSS += '#my_unique_id .squaredThree label:after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);opacity: 0;content: "";position: absolute;width: 9px;height: 5px;background: transparent;top: 4px;left: 4px;border: 3px solid #ff4081;border-top: none;border-right: none;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}';
     myCSS += '#my_unique_id .squaredThree label:hover::after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";filter: alpha(opacity=30);opacity: 0.3;}';
@@ -90,7 +90,7 @@
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
-    myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
+    myHTML += '<br><div class="squaredThree">Have you applied?<input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
