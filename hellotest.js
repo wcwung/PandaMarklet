@@ -90,7 +90,7 @@
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
-    myHTML += '<br><div class="squaredThree">Have you applied?<input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
+    myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
