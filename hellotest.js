@@ -62,11 +62,11 @@
         myHTML, myHTMLNode;
 
     /* add the css */
-    myCSS  = '#my_unique_id, #my_unique_id *{font-family:Courier,"Courier New",sans-serif;color:#333;line-height:1.5em;font-size:15px;margin:0;padding:0;text-shadow:none;}';
+    myCSS  = '#my_unique_id, #my_unique_id *{font-family:Courier,"Courier New",sans-serif;color:#fff;line-height:1.5em;font-size:15px;margin:0;padding:0;text-shadow:none;}';
     myCSS += '#my_unique_id {z-index:10000;position:fixed;top:0;right:10px;background-color:#fff;}';
-    myCSS += '#my_unique_id .c {width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4; text-color:#fff}';
+    myCSS += '#my_unique_id .c {width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
     myCSS += '#my_unique_id h1 {font-size:20px; margin-bottom:0.5em;color:#0080C0}';
-    myCSS += '#my_unique_id input {width: 100%;}';
+    myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px}';
     /* then insert it */
     myStyleNode =  document.createElement('style');
     myStyleNode.innerHTML = myCSS;
