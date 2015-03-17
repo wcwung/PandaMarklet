@@ -74,14 +74,14 @@
 
     /* build the HTML element */
     myHTML  = '<div class="c">';
-    myHTML += 'Source Network: <input id="psource" type="text" value="' + (jobObject["Source Network"] || "") + '">';
-    myHTML += '<br>Company: <input id="pcompany" type="text" value="' + (jobObject["Company"]["Name"] || "") + '">';
-    myHTML += '<br>Job Title: <input id="pjobtitle" type="text" value="' + (jobObject["Job Title"] || "") + '">';
-    myHTML += '<br>Location: <input id="plocation" type="text" value="' + (jobObject["Location"] || "") + '">';
-    myHTML += '<br>Experience: <input id="pexperience" type="text" value="' + (jobObject["Company"]["Experience"] || "") + '">';
-    myHTML += '<br>Job Function/Skills: <input id="pjobfunction" type="text" value="' + (jobObject["Company"]["Job Function"] || "") + '">';
-    myHTML += '<br>Employment Type: <input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
-    myHTML += '<br>Industry: <input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
+    myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["Source Network"] || "") + '">';
+    myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["Company"]["Name"] || "") + '">';
+    myHTML += '<br>Job Title: <br><input id="pjobtitle" type="text" value="' + (jobObject["Job Title"] || "") + '">';
+    myHTML += '<br>Location: <br><input id="plocation" type="text" value="' + (jobObject["Location"] || "") + '">';
+    myHTML += '<br>Experience: <br><input id="pexperience" type="text" value="' + (jobObject["Company"]["Experience"] || "") + '">';
+    myHTML += '<br>Job Function/Skills: <br><input id="pjobfunction" type="text" value="' + (jobObject["Company"]["Job Function"] || "") + '">';
+    myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
+    myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
