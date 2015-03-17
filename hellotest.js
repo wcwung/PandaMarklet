@@ -90,6 +90,7 @@
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
     myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
+    myHTML += '<br>Favorite?<div class="squaredThree"><input type="checkbox" value="None" id="favorite" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
@@ -113,7 +114,7 @@
       jobObject["Company"]['Industry'] = document.getElementById('pindustry').value;
       jobObject["Company"]['Salary'] = document.getElementById('psalary').value;      
       jobObject["Applied"] = document.getElementById("squaredThree").checked;
-
+      jobObject["Favorite"] = document.getElementById("favorite").checked;
       console.log(jobObject);
       sendData();
     };
