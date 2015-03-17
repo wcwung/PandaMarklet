@@ -89,6 +89,7 @@
     myHTML += '<br>Job Function/Skills: <br><input id="pjobfunction" type="text" value="' + (jobObject["Company"]["Job Function"] || "") + '">';
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
+    myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
     myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
@@ -111,6 +112,7 @@
       jobObject["Company"]['Job Function'] = document.getElementById('pjobfunction').value;
       jobObject["Company"]['Employment Type'] = document.getElementById('pemployment').value;
       jobObject["Company"]['Industry'] = document.getElementById('pindustry').value;
+      jobObject["Company"]['Salary'] = document.getElementById('psalary').value;      
       jobObject["Applied"] = document.getElementById("squaredThree").checked;
 
       console.log(jobObject);
