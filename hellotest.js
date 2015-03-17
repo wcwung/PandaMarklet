@@ -66,7 +66,7 @@
     myCSS += '#my_unique_id {z-index:10000;position:fixed;top:0;right:10px;background-color:#fff;}';
     myCSS += '#my_unique_id .c {width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
     myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; padding-top: 5px;}';
-    myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px; padding: 2px 5px; margin-top: 5px}';
+    myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
     /* then insert it */
     myStyleNode =  document.createElement('style');
     myStyleNode.innerHTML = myCSS;
