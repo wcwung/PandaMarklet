@@ -83,6 +83,7 @@
     myHTML += '<br>Job Function/Skills: <br><input id="pjobfunction" type="text" value="' + (jobObject["Company"]["Job Function"] || "") + '">';
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
+    myHTML += '<input type="checkbox" id="papplied">';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
     /* and create the node */
@@ -104,6 +105,7 @@
       jobObject["Company"]['Job Function'] = document.getElementById('pjobfunction').value;
       jobObject["Company"]['Employment Type'] = document.getElementById('pemployment').value;
       jobObject["Company"]['Industry'] = document.getElementById('pindustry').value;
+      jobObject["Applied"] = document.getElementById("papplied").checked;
 
       console.log(jobObject);
       sendData();
