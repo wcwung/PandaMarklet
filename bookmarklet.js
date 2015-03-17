@@ -1,55 +1,54 @@
 (function(){
-  var array = [];
-  var obj = {};
+  var data = [];
+  var dataObj = {};
   var site = window.location.origin;
+  var pathname = window.location.pathname;
 
+  var fillDataObj = function(){
+    for( var i = 0; i < descriptions.length; i++ ){
+      dataObj[descriptions[i]] = data[i];
+    }
+    console.log(dataObj);
+  };
   var sendData = function(){
     var http = new XMLHttpRequest();
     var url = 'https://httpbin.org/post';
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/json');
-    http.send( JSON.stringify(obj) );
+    http.send( JSON.stringify(dataObj) );
     alert('Job saved');
   };
 
-  if( site === 'https://www.linkedin.com' && window.location.pathname.slice(0,6) === '/jobs2'){
+  if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
     var descriptions = ['Origin URL','Job URL', 'Company', 'Job Title', 'Location', 'Day Posted', 'Apply Link', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
-    array.push( window.location.origin );
-    array.push( window.location.pathname );
-    array.push( $('div.content:eq(0)').find('span:eq(0)').text() );
-    array.push( $('h1')[0].innerHTML );
-    array.push( $('div.content:eq(0)').find('span:eq(2)').text() );
-    array.push( $('div.content:eq(0)').find('.posted').text() );
-    array.push( $('#offsite-apply-button').attr('href') );
+    data.push( site );
+    data.push( pathname );
+    data.push( $('div.content:eq(0)').find('span:eq(0)').text() );
+    data.push( $('h1')[0].innerHTML );
+    data.push( $('div.content:eq(0)').find('span:eq(2)').text() );
+    data.push( $('div.content:eq(0)').find('.posted').text() );
+    data.push( $('#offsite-apply-button').attr('href') );
 
     var otherDetails = $('.value');
     for( var i = 0; i < otherDetails.length; i++ ){
-      array.push(otherDetails[i].innerHTML)
+      data.push(otherDetails[i].innerHTML)
     }
 
-    for( var i = 0; i < descriptions.length; i++ ){
-      obj[descriptions[i]] = array[i];
-    }
-
-    console.log(obj);
+    fillDataObj();
     sendData();
-  } else if ( site === 'https://angel.co' ){
+  } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
     var descriptions = ['Origin URL', 'Job URL', 'Company', 'Job Title', 'Location', 'Skills', 'Salary'];
     var CompanyTitle = $('.join-title').text().split(' at ');
 
-    array.push( window.location.origin );
-    array.push( window.location.pathname );
-    array.push( CompanyTitle[1] );
-    array.push( CompanyTitle[0] );
-    array.push( $('.locations').text() );
-    array.push( $('.skills').text() );
-    array.push( $('.salary').text() );
+    data.push( site );
+    data.push( pathname );
+    data.push( CompanyTitle[1] );
+    data.push( CompanyTitle[0] );
+    data.push( $('.locations').text() );
+    data.push( $('.skills').text() );
+    data.push( $('.salary').text() );
 
-    for( var i = 0; i < descriptions.length; i++ ){
-      obj[descriptions[i]] = array[i];
-    }
-
-    console.log(obj);
+    fillDataObj();
     sendData(); 
   } else {
     alert('Not a Valid Job Post');
