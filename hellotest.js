@@ -50,7 +50,7 @@
 
       companydata.push( CompanyTitle[1] );
       companydata.push( $('.skills').text() );
-      companydata.push( $('.salary').text() );
+      companydata.push( $('.salary').text().split('\n').slice(1,4).join('') );
 
       fillJobObj(jobObject, descriptions, jobdata);
       fillJobObj(jobObject['Company'], company, companydata);
