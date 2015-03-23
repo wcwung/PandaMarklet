@@ -97,11 +97,11 @@ var showBookMarklet = function() {
     myCSS += '#my_unique_id .c {height: 900px;width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
     // myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
     // myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px; padding: 5px}';
-    myCSS += '#my_unique_id .squaredThree, .favorite {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right; margin-top:3px}';
-    myCSS += '#my_unique_id .squaredThree label, .favorite label {cursor: pointer;position: absolute;width: 20px;height: 20px;top: 0;border-radius: 4px;-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);background: -webkit-linear-gradient(top, #fff 0%, #eee 100%);background: -moz-linear-gradient(top, #fff 0%, #eee 100%);background: -o-linear-gradient(top, #fff 0%, #eee 100%);background: -ms-linear-gradient(top, #fff 0%, #eee 100%);background: linear-gradient(top, #fff 0%, #eee 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fff", endColorstr="#eee",GradientType=0 );}';
-    myCSS += '#my_unique_id .squaredThree label:after, .favorite label:after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);opacity: 0;content: "";position: absolute;width: 9px;height: 5px;background: transparent;top: 4px;left: 4px;border: 3px solid #ff4081;border-top: none;border-right: none;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}';
-    myCSS += '#my_unique_id .squaredThree label:hover::after, .favorite label:hover::after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";filter: alpha(opacity=30);opacity: 0.3;}';
-    myCSS += '#my_unique_id .squaredThree input[type=checkbox]:checked + label:after, .favorite input[type=checkbox]:checked + label:after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter: alpha(opacity=100);opacity: 1;}';
+    // myCSS += '#my_unique_id .squaredThree, .favorite {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right; margin-top:3px}';
+    // myCSS += '#my_unique_id .squaredThree label, .favorite label {cursor: pointer;position: absolute;width: 20px;height: 20px;top: 0;border-radius: 4px;-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);background: -webkit-linear-gradient(top, #fff 0%, #eee 100%);background: -moz-linear-gradient(top, #fff 0%, #eee 100%);background: -o-linear-gradient(top, #fff 0%, #eee 100%);background: -ms-linear-gradient(top, #fff 0%, #eee 100%);background: linear-gradient(top, #fff 0%, #eee 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fff", endColorstr="#eee",GradientType=0 );}';
+    // myCSS += '#my_unique_id .squaredThree label:after, .favorite label:after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);opacity: 0;content: "";position: absolute;width: 9px;height: 5px;background: transparent;top: 4px;left: 4px;border: 3px solid #ff4081;border-top: none;border-right: none;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}';
+    // myCSS += '#my_unique_id .squaredThree label:hover::after, .favorite label:hover::after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";filter: alpha(opacity=30);opacity: 0.3;}';
+    // myCSS += '#my_unique_id .squaredThree input[type=checkbox]:checked + label:after, .favorite input[type=checkbox]:checked + label:after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter: alpha(opacity=100);opacity: 1;}';
     /* then insert it */ 
     myStyleNode =  document.createElement('style');
     myStyleNode.innerHTML = myCSS;
@@ -119,8 +119,8 @@ var showBookMarklet = function() {
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["company"]["employmentType"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["company"]["industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["company"]["salary"] || "") + '">';
-    myHTML += '<br><input type="checkbox" value="None" id="applied" name="check" /><label for="applied">Applied?</label></div>';
-    myHTML += '<br><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite">Favorite?</label></div>';
+    myHTML += '<br><input type="checkbox" value="None" id="papplied" name="check" /><label for="papplied">Applied?</label></div>';
+    myHTML += '<br><input type="checkbox" value="None" id="pfavorite" name="check" /><label for="pfavorite">Favorite?</label></div>';
     myHTML += '<br><button id="pandabutton" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>';
     myHTML += '</div>';
     myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
@@ -145,8 +145,8 @@ var showBookMarklet = function() {
       jobObject["company"]['employmentType'] = document.getElementById('pemployment').value;
       jobObject["company"]['industry'] = document.getElementById('pindustry').value;
       jobObject["company"]['salary'] = document.getElementById('psalary').value;      
-      jobObject["applied"] = document.getElementById("applied").checked;
-      jobObject["favorite"] = document.getElementById("favorite").checked;
+      jobObject["applied"] = document.getElementById("papplied").checked;
+      jobObject["favorite"] = document.getElementById("pfavorite").checked;
       console.log(jobObject);
       sendData();
     };
