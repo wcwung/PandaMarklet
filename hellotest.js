@@ -128,9 +128,11 @@ var showBookMarklet = function() {
     /* and create the node */
     myHTMLNode = document.createElement('div');
     myHTMLNode.id = 'my_unique_id';
+    console.log(myHTML);
     myHTMLNode.innerHTML = myHTML;
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
+    console.log(myHTMLNode);
 
     /* listener/ updata jobObject / POST jobObject */
     var updataJobObj = function(){
