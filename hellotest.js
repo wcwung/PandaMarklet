@@ -126,7 +126,7 @@ var showBookMarklet = function() {
     myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
     myHTML += '<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>';
     /* and create the node */
-    myHTMLNode = document.createElement('iframe');
+    myHTMLNode = document.createElement('div');
     myHTMLNode.id = 'my_unique_id';
     myHTMLNode.innerHTML = myHTML;
     /* injec the node, with the event attached */
