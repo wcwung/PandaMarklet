@@ -119,8 +119,8 @@ var showBookMarklet = function() {
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["company"]["employmentType"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["company"]["industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["company"]["salary"] || "") + '">';
-    myHTML += '<br><input type="checkbox" value="None" id="papplied" name="check" /><label for="papplied">Applied?</label>';
-    myHTML += '<br><input type="checkbox" value="None" id="pfavorite" name="check" /><label for="pfavorite">Favorite?</label>';
+    myHTML += '<p><input type="checkbox" value="None" id="papplied" name="check" /><label for="papplied">Applied?</label></p>';
+    myHTML += '<p><input type="checkbox" value="None" id="pfavorite" name="check" /><label for="pfavorite">Favorite?</label></p>';
     myHTML += '<br><button id="pandabutton" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>';
     myHTML += '</div>';
     myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
