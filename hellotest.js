@@ -30,7 +30,7 @@
 var showBookMarklet = function() {
     var jobdata = [];
     var companydata =[];
-    var jobObject = {'Company': {}};
+    var jobObject = {'company': {}};
     var site = window.location.origin;
     var pathname = window.location.pathname;
 
