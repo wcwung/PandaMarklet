@@ -88,7 +88,7 @@ var showBookMarklet = function() {
 
     /* FORM */
     var myCSS, myStyleNode,
-        myHTML, myHTMLNode;
+        myHTML, myHTMLNode, myCssNode;
 
     /* add the css */
     myCSS = '@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,100);';
@@ -108,7 +108,7 @@ var showBookMarklet = function() {
     document.body.appendChild(myStyleNode);
 
     /* build the HTML element */
-    myHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
+    myCss += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
     myHTML += '<div class="c">';
     myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["sourceNetwork"] || "") + '">';
     myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["company"]["name"] || "") + '">';
@@ -131,6 +131,10 @@ var showBookMarklet = function() {
     myHTMLNode.innerHTML = myHTML;
     /* injec the node, with the event attached */
     document.body.appendChild(myHTMLNode);
+
+    myCssNode = document.createElement('span');
+    myCssNode.innerHTML = myCss;
+    document.head.insertBefore(myCssNode, document.head.firstChild);
 
     /* listener/ updata jobObject / POST jobObject */
     var updataJobObj = function(){
