@@ -42,7 +42,7 @@ var showBookMarklet = function() {
 
     var sendData = function(){
       var http = new XMLHttpRequest();
-      var url = 'https://httpbin.org/post';
+      var url = 'https://jobpanda.herokuapp.com/api/listings';
       http.open('POST', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.send( JSON.stringify(jobObject) );
