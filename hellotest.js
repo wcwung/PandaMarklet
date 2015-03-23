@@ -119,8 +119,8 @@ var showBookMarklet = function() {
     myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["company"]["employmentType"] || "") + '">';
     myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["company"]["industry"] || "") + '">';
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["company"]["salary"] || "") + '">';
-    myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
-    myHTML += '<br>Favorite?<div class="favorite"><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite"></label></div>';
+    myHTML += '<br><input type="checkbox" value="None" id="applied" name="check" /><label for="applied">Applied?</label></div>';
+    myHTML += '<br><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite">Favorite?</label></div>';
     myHTML += '<br><button id="pandabutton" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>';
     myHTML += '</div>';
     myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
@@ -145,7 +145,7 @@ var showBookMarklet = function() {
       jobObject["company"]['employmentType'] = document.getElementById('pemployment').value;
       jobObject["company"]['industry'] = document.getElementById('pindustry').value;
       jobObject["company"]['salary'] = document.getElementById('psalary').value;      
-      jobObject["applied"] = document.getElementById("squaredThree").checked;
+      jobObject["applied"] = document.getElementById("applied").checked;
       jobObject["favorite"] = document.getElementById("favorite").checked;
       console.log(jobObject);
       sendData();
