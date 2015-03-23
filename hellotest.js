@@ -1,4 +1,19 @@
 (function () {
+    var getAuth = function(){
+      var http = new XMLHttpRequest();
+      http.onreadystatechange = function(){
+        if (http.readyState == 4 && http.status == 200){
+          console.log(http.responseText); // success
+        } else {
+          console.log('fail');
+        }
+      }; 
+      var url = 'https://jobpanda.herokuapp.com/';
+      http.open('GET', url, true);
+      http.setRequestHeader('Content-type', 'application/json');
+      http.send( JSON.stringify(jobObject) );
+    }
+
     var jobdata = [];
     var companydata =[];
     var jobObject = {'Company': {}};
