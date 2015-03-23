@@ -1,19 +1,33 @@
 (function () {
-    var getAuth = function(){
+    var getAuth = function(callback){
       var http = new XMLHttpRequest();
       http.onreadystatechange = function(){
         if (http.readyState == 4 && http.status == 200){
-          console.log(http.responseText); // success
-        } else {
-          console.log('fail');
+          callback(JSON.parse(http.responseText)); // success
         }
       }; 
-      var url = 'https://jobpanda.herokuapp.com/';
+      var url = 'https://httpbin.org/get';
       http.open('GET', url, true);
       http.setRequestHeader('Content-type', 'application/json');
-      http.send( JSON.stringify(jobObject) );
-    }
+      http.send();
+    };
 
+    var isAuthenticated = function(resp) {
+      if (resp.isAuthenticated) {
+        showBookMarklet();
+      } else {
+        var anchorTag = document.createElement('a');
+        anchorTag.setAttribute('href', 'http://google.com');
+        anchorTag.setAttribute('target', '_blank');
+        document.body.appendChild(anchorTag);
+        anchorTag.click();
+      }
+    };
+
+    getAuth(isAuthenticated);
+}());
+
+var showBookMarklet = function() {
     var jobdata = [];
     var companydata =[];
     var jobObject = {'Company': {}};
@@ -139,7 +153,5 @@
       pandabutton.addEventListener('click', updataJobObj, false);
     } else if (el.attachEvent) {
       pandabutton.attachEvent('onclick', updataJobObj);
-    }
-    
-  
-}());
+    }  
+  };
