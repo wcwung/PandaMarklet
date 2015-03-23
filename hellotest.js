@@ -121,7 +121,7 @@ var showBookMarklet = function() {
     myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
     myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br>Favorite?<div class="favorite"><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite"></label></div>';
-    myHTML += '<br><button id="pandabutton">Submit</button>';
+    myHTML += '<br><button id="pandabutton" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>';
     myHTML += '</div>';
     myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
     myHTML += '<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>';
