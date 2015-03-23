@@ -87,7 +87,7 @@ var showBookMarklet = function() {
     }
 
     /* FORM */
-    var myCSS, myStyleNode,
+    var myCss, myStyleNode,
         myHTML, myHTMLNode, myCssNode;
 
     /* add the css */
