@@ -50,8 +50,8 @@ var showBookMarklet = function() {
     };
 
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
-      var descriptions = ['Job Title', 'Location', 'Apply Link', 'Source Network'];
-      var company = ['Name', 'Day Posted', 'Experience', 'Job Function', 'Employment Type', 'Industry', 'Employer Job ID', 'Job ID'];
+      var descriptions = ['jobTitle', 'location', 'applyLink', 'sourceNetwork'];
+      var company = ['name', 'dayPosted', 'experience', 'jobFunction', 'employmentType', 'industry', 'employerJobId', 'jobID'];
       jobdata.push( $('h1')[0].innerHTML );
       jobdata.push( $('div.content:eq(0)').find('span:eq(2)').text() );
       jobdata.push( $('#offsite-apply-button').attr('href') );
@@ -65,11 +65,11 @@ var showBookMarklet = function() {
       }
 
       fillJobObj(jobObject, descriptions, jobdata);
-      fillJobObj(jobObject['Company'], company, companydata);
+      fillJobObj(jobObject['company'], company, companydata);
       console.log(jobObject);
     } else if ( site + pathname.split('/')[2] === 'https://angel.cojobs' ){
-      var descriptions = ['Job Title', 'Location', 'Apply Link', 'Source Network'];
-      var company = ['Name','Job Function', 'Salary'];
+      var descriptions = ['jobTitle', 'location', 'applyLink', 'sourceNetwork'];
+      var company = ['name','jobFunction', 'salary'];
       var CompanyTitle = $('.join-title').text().split(' at ');
 
       jobdata.push( CompanyTitle[0] );
@@ -82,7 +82,7 @@ var showBookMarklet = function() {
       companydata.push( $('.salary').text().split('\n').slice(1,4).join('') );
 
       fillJobObj(jobObject, descriptions, jobdata);
-      fillJobObj(jobObject['Company'], company, companydata);
+      fillJobObj(jobObject['company'], company, companydata);
       console.log(jobObject);
     }
 
@@ -95,7 +95,7 @@ var showBookMarklet = function() {
     myCSS += '#my_unique_id, #my_unique_id *{font-family:"Roboto","Courier New",sans-serif;color:#fff;line-height:1.5em;font-size:15px;padding:0;text-shadow:none;}';
     myCSS += '#my_unique_id {z-index:10000;position:fixed;top:0;right:0px;background-color:#fff;}';
     myCSS += '#my_unique_id .c {height: 900px;width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
-    myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
+    // myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
     myCSS += '#my_unique_id input {width: 100%; color: #333; border-radius: 5px; padding: 5px}';
     myCSS += '#my_unique_id .squaredThree, .favorite {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right; margin-top:3px}';
     myCSS += '#my_unique_id .squaredThree label, .favorite label {cursor: pointer;position: absolute;width: 20px;height: 20px;top: 0;border-radius: 4px;-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);background: -webkit-linear-gradient(top, #fff 0%, #eee 100%);background: -moz-linear-gradient(top, #fff 0%, #eee 100%);background: -o-linear-gradient(top, #fff 0%, #eee 100%);background: -ms-linear-gradient(top, #fff 0%, #eee 100%);background: linear-gradient(top, #fff 0%, #eee 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fff", endColorstr="#eee",GradientType=0 );}';
@@ -109,16 +109,16 @@ var showBookMarklet = function() {
 
     /* build the HTML element */
     myHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
-    myHTML  = '<div class="c">';
-    myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["Source Network"] || "") + '">';
-    myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["Company"]["Name"] || "") + '">';
-    myHTML += '<br>Job Title: <br><input id="pjobtitle" type="text" value="' + (jobObject["Job Title"] || "") + '">';
-    myHTML += '<br>Location: <br><input id="plocation" type="text" value="' + (jobObject["Location"] || "") + '">';
-    myHTML += '<br>Experience: <br><input id="pexperience" type="text" value="' + (jobObject["Company"]["Experience"] || "") + '">';
-    myHTML += '<br>Job Function/Skills: <br><input id="pjobfunction" type="text" value="' + (jobObject["Company"]["Job Function"] || "") + '">';
-    myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["Company"]["Employment Type"] || "") + '">';
-    myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["Company"]["Industry"] || "") + '">';
-    myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["Company"]["Salary"] || "") + '">';
+    myHTML += '<div class="c">';
+    myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["sourceNetwork"] || "") + '">';
+    myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["company"]["name"] || "") + '">';
+    myHTML += '<br>Job Title: <br><input id="pjobtitle" type="text" value="' + (jobObject["jobTitle"] || "") + '">';
+    myHTML += '<br>Location: <br><input id="plocation" type="text" value="' + (jobObject["location"] || "") + '">';
+    myHTML += '<br>Experience: <br><input id="pexperience" type="text" value="' + (jobObject["company"]["experience"] || "") + '">';
+    myHTML += '<br>Job Function/Skills: <br><input id="pjobfunction" type="text" value="' + (jobObject["company"]["jobFunction"] || "") + '">';
+    myHTML += '<br>Employment Type: <br><input id="pemployment" type="text" value="' + (jobObject["company"]["employmentType"] || "") + '">';
+    myHTML += '<br>Industry: <br><input id="pindustry" type="text" value="' + (jobObject["company"]["industry"] || "") + '">';
+    myHTML += '<br>Salary: <br><input id="psalary" type="text" value="' + (jobObject["company"]["salary"] || "") + '">';
     myHTML += '<br>Have you applied?<div class="squaredThree"><input type="checkbox" value="None" id="squaredThree" name="check" /><label for="squaredThree"></label></div>';
     myHTML += '<br>Favorite?<div class="favorite"><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite"></label></div>';
     myHTML += '<br><button id="pandabutton" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>';
@@ -134,19 +134,19 @@ var showBookMarklet = function() {
 
     /* listener/ updata jobObject / POST jobObject */
     var updataJobObj = function(){
-      jobObject['Origin URL'] = site;
-      jobObject['Job URL'] = pathname;
-      jobObject['Source Network'] = document.getElementById('psource').value;    
-      jobObject['Job Title'] = document.getElementById('pjobtitle').value;
-      jobObject['Location'] = document.getElementById('plocation').value;
-      jobObject['Company']['Name'] = document.getElementById('pcompany').value;
-      jobObject["Company"]['Experience'] = document.getElementById('pexperience').value;
-      jobObject["Company"]['Job Function'] = document.getElementById('pjobfunction').value;
-      jobObject["Company"]['Employment Type'] = document.getElementById('pemployment').value;
-      jobObject["Company"]['Industry'] = document.getElementById('pindustry').value;
-      jobObject["Company"]['Salary'] = document.getElementById('psalary').value;      
-      jobObject["Applied"] = document.getElementById("squaredThree").checked;
-      jobObject["Favorite"] = document.getElementById("favorite").checked;
+      jobObject['originURL'] = site;
+      jobObject['jobURL'] = pathname;
+      jobObject['sourceNetwork'] = document.getElementById('psource').value;    
+      jobObject['jobTitle'] = document.getElementById('pjobtitle').value;
+      jobObject['location'] = document.getElementById('plocation').value;
+      jobObject['company']['name'] = document.getElementById('pcompany').value;
+      jobObject["company"]['experience'] = document.getElementById('pexperience').value;
+      jobObject["company"]['jobFunction'] = document.getElementById('pjobfunction').value;
+      jobObject["company"]['employmentType'] = document.getElementById('pemployment').value;
+      jobObject["company"]['industry'] = document.getElementById('pindustry').value;
+      jobObject["company"]['salary'] = document.getElementById('psalary').value;      
+      jobObject["applied"] = document.getElementById("squaredThree").checked;
+      jobObject["favorite"] = document.getElementById("favorite").checked;
       console.log(jobObject);
       sendData();
     };
