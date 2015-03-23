@@ -92,9 +92,9 @@ var showBookMarklet = function() {
 
     /* add the css */
     myCSS = '@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,100);';
-    myCSS += '#my_unique_id, #my_unique_id *{color:#fff;line-height:0;font-size:15px;text-shadow:none;}';
-    myCSS += '#my_unique_id {z-index:10000;position:fixed;top:0;right:0px;background-color:#fff;}';
-    myCSS += '#my_unique_id .c {height: 900px;width: 250px;padding:20px; padding-top: 50px; background-color: #00bcd4}';
+    myCSS += '#my_unique_id, #my_unique_id *{color:#333;line-height:0;font-size:15px;text-shadow:none;}';
+    myCSS += '#my_unique_id {z-index:10000;position:fixed;top:0;right:0px;background-color:#333;}';
+    myCSS += '#my_unique_id .c {height: 900px;width: 250px;padding:20px; padding-top: 50px; background-color: #fff}';
     // myCSS += '#my_unique_id #pandabutton {background-color:#ff4081; color: #fff; border-radius: 5px; padding: 2px 20px; margin-top: 5px}';
     myCSS += '#my_unique_id input {color: #333}';
     // myCSS += '#my_unique_id .squaredThree, .favorite {display: inline-block;width:20px;margin:20pxauto;position:relative;float:right; margin-top:3px}';
