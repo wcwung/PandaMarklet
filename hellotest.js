@@ -17,7 +17,7 @@
         showBookMarklet();
       } else {
         var anchorTag = document.createElement('a');
-        anchorTag.setAttribute('href', 'http://google.com');
+        anchorTag.setAttribute('href', 'http://jobpanda.herokuapp.com/');
         anchorTag.setAttribute('target', '_blank');
         document.body.appendChild(anchorTag);
         anchorTag.click();
