@@ -13,7 +13,7 @@
     };
 
     var isAuthenticated = function(resp) {
-      if (resp.isAuthenticated) {
+      if (true) { //resp.isAuthenticated
         showBookMarklet();
       } else {
         var anchorTag = document.createElement('a');
@@ -108,6 +108,7 @@ var showBookMarklet = function() {
     document.body.appendChild(myStyleNode);
 
     /* build the HTML element */
+    myHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
     myHTML  = '<div class="c">';
     myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["Source Network"] || "") + '">';
     myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["Company"]["Name"] || "") + '">';
@@ -122,6 +123,8 @@ var showBookMarklet = function() {
     myHTML += '<br>Favorite?<div class="favorite"><input type="checkbox" value="None" id="favorite" name="check" /><label for="favorite"></label></div>';
     myHTML += '<br><button id="pandabutton">Submit</button>';
     myHTML += '</div>';
+    myHTML += '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>';
+    myHTML += '<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>';
     /* and create the node */
     myHTMLNode = document.createElement('div');
     myHTMLNode.id = 'my_unique_id';
