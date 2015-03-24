@@ -13,9 +13,9 @@
     };
 
     var isAuthenticated = function(resp) {
-      if (true) { //resp.isAuthenticated
+      if (true) { //resp.isAuthenticated - server sends back an object with this key with a boolean value.
         showBookMarklet();
-      } else {
+      } else { // opens new page to website to login.
         var anchorTag = document.createElement('a');
         anchorTag.setAttribute('href', 'http://jobpanda.herokuapp.com/');
         anchorTag.setAttribute('target', '_blank');
@@ -42,13 +42,14 @@ var showBookMarklet = function() {
 
     var sendData = function(){
       var http = new XMLHttpRequest();
-      var url = 'https://httpbin.org/post';
+      var url = 'https://jobpanda.herokuapp.com/api/listings';
       http.open('POST', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.send( JSON.stringify(jobObject) );
       alert('Job saved');
     };
 
+/* SCRAPING DATA */
     if( site + pathname.slice(0,6) === 'https://www.linkedin.com/jobs2'){
       var descriptions = ['jobTitle', 'location', 'applyLink', 'sourceNetwork'];
       var company = ['name', 'dayPosted', 'experience', 'jobFunction', 'employmentType', 'industry', 'employerJobId', 'jobID'];
@@ -86,7 +87,7 @@ var showBookMarklet = function() {
       console.log(jobObject);
     }
 
-    /* FORM */
+/* THE FORM (CSS, HTML, BUTTON LISTENER) */
     var myCSS, myStyleNode,
         myHTML, myHTMLNode;
 
@@ -108,7 +109,7 @@ var showBookMarklet = function() {
     document.body.appendChild(myStyleNode);
 
     /* build the HTML element */
-    myHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
+    myHTML = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">';
     myHTML += '<div class="c">';
     myHTML += 'Source Network: <br><input id="psource" type="text" value="' + (jobObject["sourceNetwork"] || "") + '">';
     myHTML += '<br>Company: <br><input id="pcompany" type="text" value="' + (jobObject["company"]["name"] || "") + '">';
@@ -129,7 +130,7 @@ var showBookMarklet = function() {
     myHTMLNode = document.createElement('div');
     myHTMLNode.id = 'my_unique_id';
     myHTMLNode.innerHTML = myHTML;
-    /* injec the node, with the event attached */
+    /* inject the node, with the event attached */
     document.body.appendChild(myHTMLNode);
 
     /* listener/ updata jobObject / POST jobObject */

@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-  input {
-    padding: 5px 5px 5px 5px;
-    border-radius: 3px;
-    font-size: 14px;
-    border: 1px solid black;
-  }
-
-  form {
-    width: 700px;
-    height: 500px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-family: Arial;
-  }
-  </style>
   </head>
   <body>
     <a href="javascript:(function(){
@@ -24,45 +8,14 @@
     script.type = 'text/javascript';
     script.src = 'https://wendyleung.github.io/PandaMarklet/bookmarklet.js';
     document.body.appendChild(script);
-    })();">JobPanda</a>
+    })();">bookmarklet</a>
 
     <a href="javascript:(function(){
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://wendyleung.github.io/PandaMarklet/hellotest.js';
+    script.src = 'https://wendyleung.github.io/PandaMarklet/jobPanda.js';
     document.body.appendChild(script);
-    })();">hellotest</a>
+    })();">jobPanda</a>
 
-    <p></p>
-    <form>
-      <div>
-        Company: <input type='text'/>
-      </div>
-      <div>
-        Job Title: <input type='text'/> 
-      </div>
-      <div>
-        Location: <input type='text'/> 
-      </div>
-      <div>
-        Experience: <input type='text'/> 
-      </div>
-      <div>
-        Job Function/Skills: <input type='text'/> 
-      </div>
-      <div>
-        Employment Type: <input type='text'/> 
-      </div>
-      <div>
-        Industry: <input type='text'/> 
-      </div>
-    </form>
   </body>
 </html>
-
-<!--
-$('div.content:eq(0)')
-$('.details') 
-$('div.label') - labels.
-$('.value') - values.
- -->
