@@ -100,7 +100,7 @@ var showBookMarklet = function() {
 
     myCSS += '.drawer {min-height: 900px;height: 100%;width: 250px;background: #FAFAFA;box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);font-family: "Roboto", sans-serif;color: #105F4B;padding: 30px 20px 20px 20px;}'
 
-    myCSS += 'button#pandabutton {width: 100%;border: none;border-radius: 2px;position: relative;transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);transition-delay: 0.2s;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);padding: 20px;width: 50%;color: #fff;background: #E33B2E;text-transform: uppercase;}'
+    myCSS += 'button#pandabutton {width: 100%;border: none;border-radius: 2px;position: relative;transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);transition-delay: 0.2s;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);padding: 20px;width: 50%;color: #fff;background: #E33B2E;text-transform: uppercase; cursor:pointer}'
 
     /* then insert it */ 
     myStyleNode =  document.createElement('style');
