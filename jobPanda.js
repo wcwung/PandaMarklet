@@ -145,8 +145,6 @@ var showBookMarklet = function() {
       jobObject["company"]['employmentType'] = document.getElementById('pemployment').value;
       jobObject["company"]['industry'] = document.getElementById('pindustry').value;
       jobObject["company"]['salary'] = document.getElementById('psalary').value;      
-      jobObject["applied"] = document.getElementById("papplied").checked;
-      jobObject["favorite"] = document.getElementById("pfavorite").checked;
       console.log(jobObject);
       sendData();
     };
