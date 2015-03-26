@@ -17,7 +17,7 @@
         showBookMarklet();
       } else { // opens new page to website to login.
         var anchorTag = document.createElement('a');
-        anchorTag.setAttribute('href', 'http://jobpanda.herokuapp.com/');
+        anchorTag.setAttribute('href', 'http://jpanda.herokuapp.com/');
         anchorTag.setAttribute('target', '_blank');
         document.body.appendChild(anchorTag);
         anchorTag.click();
@@ -43,7 +43,7 @@ var showBookMarklet = function() {
     var sendData = function(){
       var http = new XMLHttpRequest();
       // var url = 'https://jpanda.herokuapp.com/api/listings';
-      var url = 'localhost:8000/api/listings'
+      var url = 'https://localhost:8000/api/listings'
       http.open('POST', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.send( JSON.stringify(jobObject) );
