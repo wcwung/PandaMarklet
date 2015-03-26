@@ -42,7 +42,8 @@ var showBookMarklet = function() {
 
     var sendData = function(){
       var http = new XMLHttpRequest();
-      var url = 'https://jpanda.herokuapp.com/api/listings';
+      // var url = 'https://jpanda.herokuapp.com/api/listings';
+      var url = 'localhost:8000/api/listings'
       http.open('POST', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.send( JSON.stringify(jobObject) );
